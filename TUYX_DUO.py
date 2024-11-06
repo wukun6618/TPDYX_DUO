@@ -107,7 +107,7 @@ classlocal.max_buy_nums             = Max_buynums
 # 数据类型
 classlocal.p                        = 0                 # 绘图点用
 classlocal.count                    = 0                 # 01 记录定时函数执行次数
-classlocal.Period_Type              = '15m'
+classlocal.Period_Type              = '20m'
 classlocal.trade_buy_record_dict    = {}                # 02 买入交易记录
 classlocal.buy_code_count           = 0                 # 03 风控函数，防止买入过多。
 classlocal.Reflash_buy_list         = 1
@@ -202,7 +202,7 @@ classlocal.timetype         = '15m'
 classlocal.tradetype        = 'open'  #open #close
 classlocal.tradedata        = ''
 classlocal.stop             = 0
-classlocal.takeprofit        = 0
+classlocal.takeprofit       = 0
 
 classlocal.last_price       = 0
 classlocal.profit           = 0
@@ -261,7 +261,7 @@ def init(ContextInfo):
     if classlocal.huicedebug_en:
         eastmoney_zx_name_listt =['FT1','FT2','FT3','FT4','FT5','FT6','FT7',\
                                 'FT8','FT9','FTA','FTB','FTC','FTD','FTE']
-        eastmoney_zx_name_listt = ['FT1']
+        #eastmoney_zx_name_listt = ['FT1']
     else:
         eastmoney_zx_name_listt =['FT1','FT2','FT3','FT4','FT5','FT6','FT7',\
                                 'FT8','FT9','FTA','FTB','FTC','FTD','FTE']
@@ -2164,6 +2164,7 @@ def tYield_tracking_calculations_and_presentations(classlocal):
     G_df.loc[Tradingday,'Yield']                    = Yield
 
     return G_df
+
 
 
 
