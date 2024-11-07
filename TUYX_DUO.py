@@ -81,22 +81,22 @@ classlocal = b()
 
 classlocal.printmoney_en            = 1
 classlocal.printlocalhold_en        = 1
-classlocal.sell_debug_inf_en        = 1
+classlocal.sell_debug_inf_en        = 0
 classlocal.checklist_debug_en       = 0 #打印本地自选股行情
 classlocal.Index_time_debug_en      = 0
 classlocal.Trade_init_debug_en      = 0 #
 classlocal.model_df_level2_debug_en = 0 #模型选出列表购买列表
 classlocal.JLZY_debug_en            = 0 #棘轮止盈打印
-classlocal.huicedebug_en            = 1 #回测的时候打开，运行的时候关闭
+classlocal.huicedebug_en            = 0 #回测的时候打开，运行的时候关闭
 classlocal.mp_debug_origin_en       = 0 #模型选出打印
 classlocal.ZXCS_debug_en            = 0 #执行周期和次数打印
 classlocal.h_data_debug_en          = 0 #打印执行选股前的行情数据
 classlocal.TPDYX_debug_en           = 0 #debug信息打印
-classlocal.TPDYX_STOP_DEBUG         = 1 #行情止损打印
+classlocal.TPDYX_STOP_DEBUG         = 0 #行情止损打印
 classlocal.check_list               = ['SA00.ZF']
 classlocal.check_list_debug_en      = 0 #自定义行情品种
-classlocal.contract_debug_en        = 1 #打印合约信息
-classlocal.barsincentry_debug_en    = 1 #打印合约信息
+classlocal.contract_debug_en        = 0 #打印合约信息
+classlocal.barsincentry_debug_en    = 0 #打印合约信息
 # -------------------------------------------#
 # 行情设置开关
 classlocal.lefthand_checken         = 1                 # 1 打开行情止损 0 关闭
@@ -198,7 +198,7 @@ classlocal.user_buy_list            = ''
 classlocal.trade_direction  = 'kong' #duo #kong
 classlocal.code             = 'SA00.SF'
 classlocal.kindextime       = '0'
-classlocal.timetype         = '15m'
+classlocal.timetype         = '20m'
 classlocal.tradetype        = 'open'  #open #close
 classlocal.tradedata        = ''
 classlocal.stop             = 0
@@ -880,11 +880,11 @@ def handlebar(ContextInfo):
                 # 删除指定的行
                 local_hold.drop(code,inplace=True)
                 #之前有过持仓记录仪需要合并两次数据
-                if code in Tradehistory.index :
-                    Tradehistory.loc[code]  = deleted_rows + Tradehistory.loc[code]
-                else :
+                #if code in Tradehistory.index :
+                #    Tradehistory.loc[code]  = deleted_rows + Tradehistory.loc[code]
+                #else :
                     #如果没有持仓直接加入末尾
-                    Tradehistory_df         = Tradehistory.append(deleted_rows, ignore_index=False)
+                #    Tradehistory_df         = Tradehistory.append(deleted_rows, ignore_index=False)
                 #删除已卖出的卖出列表,防止后面再卖出
                 if code in Sell_list:
                     Sell_list.remove(code)
