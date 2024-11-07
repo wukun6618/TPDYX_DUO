@@ -265,6 +265,7 @@ def init(ContextInfo):
     else:
         eastmoney_zx_name_listt =['FT1','FT2','FT3','FT4','FT5','FT6','FT7',\
                                 'FT8','FT9','FTA','FTB','FTC','FTD','FTE']
+        eastmoney_zx_name_listt = ['FT1']
     #当前K线的对应的下标从0开始
     #---------------------------------------------------------------------------
     # 账号为模型交易界面选择账号
